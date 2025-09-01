@@ -1,0 +1,188 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens to match Ghibli-inspired design */
+  --background: #f5f5dc; /* Soft beige background */
+  --foreground: #3e2723; /* Dark brown text */
+  --card: #ffffff; /* White for cards */
+  --card-foreground: #3e2723; /* Dark brown text on cards */
+  --popover: #ffb74d; /* Soft golden for popovers */
+  --popover-foreground: #3e2723; /* Dark brown text on popovers */
+  --primary: #8b5b29; /* Earthy brown for primary actions */
+  --primary-foreground: #ffffff; /* White text on primary actions */
+  --secondary: #a5d6a7; /* Gentle green for secondary actions */
+  --secondary-foreground: #3e2723; /* Dark brown text on secondary actions */
+  --muted: #e0e0e0; /* Light gray for muted text */
+  --muted-foreground: #3e2723; /* Dark brown for muted text */
+  --accent: #ffb74d; /* Soft golden for accents */
+  --accent-foreground: #3e2723; /* Dark brown for accent text */
+  --destructive: #c62828; /* Deep red for destructive actions */
+  --destructive-foreground: #ffffff; /* White text on destructive actions */
+  --border: #d7ccc8; /* Light brown for borders */
+  --input: #ffffff; /* White for input fields */
+  --ring: #ffb74d; /* Soft golden for focus rings */
+  --chart-1: #a5d6a7; /* Gentle green for charts */
+  --chart-2: #ffb74d; /* Soft golden for charts */
+  --chart-3: #8b5b29; /* Earthy brown for charts */
+  --chart-4: #c5e1a5; /* Light green for charts */
+  --chart-5: #ffab91; /* Soft orange for charts */
+  --radius: 0.75rem; /* Slightly more rounded corners for Ghibli feel */
+  --sidebar: #ffffff; /* White for sidebar */
+  --sidebar-foreground: #3e2723; /* Dark brown text in sidebar */
+  --sidebar-primary: #a5d6a7; /* Gentle green for primary sidebar actions */
+  --sidebar-primary-foreground: #3e2723; /* Dark brown text in sidebar actions */
+  --sidebar-accent: #ffb74d; /* Soft golden for sidebar accents */
+  --sidebar-accent-foreground: #3e2723; /* Dark brown text in sidebar accents */
+  --sidebar-border: #d7ccc8; /* Light brown for sidebar borders */
+  --sidebar-ring: #ffb74d; /* Soft golden for sidebar focus */
+}
+
+.dark {
+  /* Dark mode with warmer Ghibli-inspired tones */
+  --background: #2e2e2e; /* Warm dark background */
+  --foreground: #f5f5dc; /* Soft beige text */
+  --card: #3e3e3e; /* Dark brown cards */
+  --card-foreground: #f5f5dc; /* Soft beige text on cards */
+  --popover: #4a4a4a; /* Dark popover */
+  --popover-foreground: #f5f5dc; /* Soft beige text on popovers */
+  --primary: #a5d6a7; /* Gentle green for primary in dark mode */
+  --primary-foreground: #2e2e2e; /* Dark text on primary */
+  --secondary: #8b5b29; /* Earthy brown for secondary */
+  --secondary-foreground: #f5f5dc; /* Soft beige text on secondary */
+  --muted: #5a5a5a; /* Muted dark gray */
+  --muted-foreground: #b0b0b0; /* Light gray for muted text */
+  --accent: #ffb74d; /* Soft golden for accents */
+  --accent-foreground: #2e2e2e; /* Dark text on accents */
+  --destructive: #e57373; /* Lighter red for dark mode */
+  --destructive-foreground: #2e2e2e; /* Dark text on destructive */
+  --border: #5a5a5a; /* Dark border */
+  --input: #4a4a4a; /* Dark input fields */
+  --ring: #ffb74d; /* Soft golden for focus rings */
+  --chart-1: #a5d6a7; /* Gentle green for charts */
+  --chart-2: #ffb74d; /* Soft golden for charts */
+  --chart-3: #8b5b29; /* Earthy brown for charts */
+  --chart-4: #c5e1a5; /* Light green for charts */
+  --chart-5: #ffab91; /* Soft orange for charts */
+  --sidebar: #3e3e3e; /* Dark sidebar */
+  --sidebar-foreground: #f5f5dc; /* Soft beige text in sidebar */
+  --sidebar-primary: #a5d6a7; /* Gentle green for primary sidebar actions */
+  --sidebar-primary-foreground: #2e2e2e; /* Dark text in sidebar actions */
+  --sidebar-accent: #ffb74d; /* Soft golden for sidebar accents */
+  --sidebar-accent-foreground: #2e2e2e; /* Dark text in sidebar accents */
+  --sidebar-border: #5a5a5a; /* Dark border for sidebar */
+  --sidebar-ring: #ffb74d; /* Soft golden for sidebar focus */
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Added Ghibli-inspired background gradient */
+    background: linear-gradient(135deg, #f5f5dc 0%, #e8f5e8 50%, #fff8e1 100%);
+    min-height: 100vh;
+  }
+
+  /* Added Ghibli-inspired floating elements */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 20% 80%, rgba(165, 214, 167, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 183, 77, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(139, 91, 41, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+/* Added Ghibli-inspired animations and effects */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gentle-pulse {
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.ghibli-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.ghibli-pulse {
+  animation: gentle-pulse 4s ease-in-out infinite;
+}
+
+/* Enhanced card styling for Ghibli feel */
+.ghibli-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(215, 204, 200, 0.3);
+  box-shadow: 0 8px 32px rgba(139, 91, 41, 0.1);
+  transition: all 0.3s ease;
+}
+
+.ghibli-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(139, 91, 41, 0.15);
+}
